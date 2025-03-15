@@ -145,10 +145,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fish',  # Nombre de tu base de datos
-        'USER': 'root',  # Tu usuario de MySQL
-        'PASSWORD': 'Jd1090050183',  # No tiene contraseña
-        'HOST': '127.0.0.1',  # Dirección del servidor MySQL
-        'PORT': '3306',  # Puerto de MySQL
+        'USER': 'avnadmin',  # Tu usuario de MySQL
+        'PASSWORD': 'AVNS_HWIjUZsf6b-yPGrOQXu',  # No tiene contraseña
+        'HOST': 'dbproyectofinal-samuelosoriogaspar-8cec.j.aivencloud.com',  # Dirección del servidor MySQL
+        'PORT': '16159',  # Puerto de MySQL
     }
 }
 

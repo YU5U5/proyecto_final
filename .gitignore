@@ -22,8 +22,8 @@ db.sqlite3-journal
 debug.log
 
 # Ignorar archivos de migraciones (excepto __init__.py)
-**/migrations/*.py
-!**/migrations/__init__.py
+- **/migrations/*.py
++ !**/migrations/*.py
 
 # Ignorar archivos con información sensible
 .env

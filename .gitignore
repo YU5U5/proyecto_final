@@ -1,0 +1,44 @@
+# Ignorar entornos virtuales
+venv/
+env/
+
+# Ignorar archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar configuraciones de IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Ignorar base de datos de desarrollo
+db.sqlite3
+db.sqlite3-journal
+
+# Ignorar archivos de logs y caché
+*.log
+debug.log
+
+# Ignorar archivos de migraciones (excepto __init__.py)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Ignorar archivos con información sensible
+.env
+*.env
+config/settings/local.py
+
+# Ignorar archivos estáticos y de usuario
+staticfiles/
+media/
+
+# Ignorar dependencias de frontend
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db

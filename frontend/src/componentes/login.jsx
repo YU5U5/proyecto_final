@@ -1,75 +1,54 @@
-// Login.js
-import React, { useState } from 'react';
-import axios from 'axios';
-
+import React, { useState } from "react";
+import { Form, Button, Container, Alert } from "react-bootstrap";
+import { loginUser } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
+
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const navigate = useNavigate();
 
-
-  const { email, password } = formData;
-
-  const onChange = e =>
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const onSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Cambia la URL por la de tu endpoint de login
-      const response = await fetch('http://localhost:8000/login/', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          email,
-          password
-        })  
-      });
-      const data = await response.json();
-      if (response.ok){
-        console.log(data);
-      }
-      
-      document.cookie = "token=" + data.access_token + "; path=/";
+      const data = await loginUser(formData);
+      localStorage.setItem("token", data.access); // ✅ Guarda el token
+      setSuccess("Inicio de sesión exitoso 🎉");
       setError(null);
-    } catch (err) {
-      setError('Error al iniciar sesión');
-      console.error(err);
+      setTimeout(() => navigate("/"), 2000); // ✅ Redirige después de 2s
+    } catch (error) {
+      setError("Correo o contraseña incorrectos");
     }
   };
 
-  localStorage.getItem('token');
-
   return (
-    <div>
+    <Container className="mt-5">
       <h2>Login</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={onSubmit}>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={onChange}
-          placeholder="Email"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={onChange}
-          placeholder="Contraseña"
-          required
-        />
-        <button type="submit">Iniciar Sesión</button>
-      </form>
-      <br />
-    </div>
+      {error && <Alert variant="danger">{error}</Alert>}
+      {success && <Alert variant="success">{success}</Alert>}
+      <Form onSubmit={handleSubmit}>
+        <Form.Group>
+          <Form.Label>Correo</Form.Label>
+          <Form.Control type="email" name="email" onChange={handleChange} required />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Contraseña</Form.Label>
+          <Form.Control type="password" name="password" onChange={handleChange} required />
+        </Form.Group>
+        <Button variant="success" type="submit" className="mt-3">
+          Iniciar sesión
+        </Button>
+      </Form>
+    </Container>
   );
 };
 

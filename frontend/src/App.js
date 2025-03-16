@@ -1,32 +1,16 @@
-// App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Register from './componentes/register';
-import Login from './componentes/login';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./componentes/Login";
 
-
-const App = () => {
+function App() {
   return (
     <Router>
-      <div style={{ padding: '20px' }}>
-        <nav>
-          <ul style={{ listStyle: 'none', display: 'flex', gap: '15px' }}>
-            <li>
-              <Link to="/">Registro</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Routes>
-          <Route path="/" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} /> {/* ✅ Redirigir a Login */}
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </Router>
   );
-};
+}
 
 export default App;

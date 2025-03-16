@@ -29,8 +29,7 @@ SECRET_KEY = 'django-insecure-n@r%-_laj)b+64%3j7*n#izgor9sqcm0#y=5ww!_&h7e%29%i4
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "*",
-    "proyecto-final-m1eb.onrender.com",
+    "proyecto-final-2xye.onrender.com",
 ]
 
 
@@ -105,12 +104,14 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # ✅ Permite el frontend local
     "https://ea91-179-1-210-204.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
+    "https://ea91-179-1-210-204.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
+    "https://proyecto-final-m1eb.onrender.com",
     "https://proyecto-final-m1eb.onrender.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-    "https://ea91-179-1-210-204.ngrok-free.app",
+    "https://proyecto-final-2xye.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True  # ✅ Permitir envío de cookies o credenciales

@@ -31,7 +31,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
 
     "proyecto-final-m1eb.onrender.com",
-    "dcb6-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
+    "f4e5-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
 
 ]
 
@@ -98,7 +98,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:3000",
-    "https://dcb6-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
+    "https://f4e5-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
     
 
 ]
@@ -110,7 +110,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # ✅ Permite el frontend local
 
-    "https://dcb6-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
+    "https://f4e5-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
 
 ]
 
@@ -131,7 +131,7 @@ CORS_ALLOW_HEADERS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-    "https://dcb6-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
+    "https://f4e5-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
 
 ]
 

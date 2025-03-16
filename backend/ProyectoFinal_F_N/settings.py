@@ -29,12 +29,10 @@ SECRET_KEY = 'django-insecure-n@r%-_laj)b+64%3j7*n#izgor9sqcm0#y=5ww!_&h7e%29%i4
 DEBUG = False
 
 ALLOWED_HOSTS = [
-<<<<<<< HEAD
+
     "proyecto-final-m1eb.onrender.com",
     "dcb6-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
-=======
-    "proyecto-final-2xye.onrender.com",
->>>>>>> b0667a06d92c555050df3603089596ad7db733f7
+
 ]
 
 
@@ -100,11 +98,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:3000",
-<<<<<<< HEAD
     "https://dcb6-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
     
-=======
->>>>>>> b0667a06d92c555050df3603089596ad7db733f7
+
 ]
 
 
@@ -113,14 +109,9 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # ✅ Permite el frontend local
-<<<<<<< HEAD
+
     "https://dcb6-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
-=======
-    "https://ea91-179-1-210-204.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
-    "https://ea91-179-1-210-204.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
-    "https://proyecto-final-m1eb.onrender.com",
-    "https://proyecto-final-m1eb.onrender.com",
->>>>>>> b0667a06d92c555050df3603089596ad7db733f7
+
 ]
 
 
@@ -140,11 +131,8 @@ CORS_ALLOW_HEADERS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-<<<<<<< HEAD
     "https://dcb6-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app",
-=======
-    "https://proyecto-final-2xye.onrender.com",
->>>>>>> b0667a06d92c555050df3603089596ad7db733f7
+
 ]
 
 CORS_ALLOW_CREDENTIALS = True  # ✅ Permitir envío de cookies o credenciales

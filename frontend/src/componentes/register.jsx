@@ -3,10 +3,11 @@ import { Form, Button, Container, Alert } from "react-bootstrap";
 import { registerUser } from "../services/authService";
 import { useNavigate } from "react-router-dom";
 
-const register = () => {
+const Register = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    nombre: "",       // 🔹 Cambiar "username" a "nombre"
     email: "",
+    celular: "",      // 🔹 Agregar campo celular
     password: "",
     confirmPassword: "",
   });
@@ -21,6 +22,7 @@ const register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (formData.password !== formData.confirmPassword) {
       setError("Las contraseñas no coinciden");
       return;
@@ -30,7 +32,7 @@ const register = () => {
       await registerUser(formData);
       setSuccess("Registro exitoso 🎉");
       setError(null);
-      setTimeout(() => navigate("/login"), 2000); // Redirige a login después de 2s
+      setTimeout(() => navigate("/login"), 2000);
     } catch (error) {
       setError("Error en el registro");
     }
@@ -43,12 +45,16 @@ const register = () => {
       {success && <Alert variant="success">{success}</Alert>}
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>Usuario</Form.Label>
-          <Form.Control type="text" name="username" onChange={handleChange} required />
+          <Form.Label>Nombre</Form.Label>
+          <Form.Control type="text" name="nombre" onChange={handleChange} required />
         </Form.Group>
         <Form.Group>
           <Form.Label>Correo</Form.Label>
           <Form.Control type="email" name="email" onChange={handleChange} required />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Celular</Form.Label>
+          <Form.Control type="text" name="celular" onChange={handleChange} required />
         </Form.Group>
         <Form.Group>
           <Form.Label>Contraseña</Form.Label>

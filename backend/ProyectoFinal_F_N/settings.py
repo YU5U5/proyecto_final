@@ -30,6 +30,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "proyecto-final-m1eb.onrender.com",
+    "5fe5-179-1-210-205.ngrok-free.app",
 ]
 
 
@@ -95,6 +96,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:3000",
+    "https://5fe5-179-1-210-205.ngrok-free.app",
 ]
 
 

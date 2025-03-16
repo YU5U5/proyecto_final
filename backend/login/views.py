@@ -6,10 +6,11 @@ from registro.models import Usuario
 from django.contrib.auth.hashers import check_password
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.utils.timezone import now
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 # Create your views here.
 
-class LoginView(APIView):
+class LoginView(TokenObtainPairView):
     def post(self, request):
         print("🔍 Datos recibidos en el backend:", request.data) 
 

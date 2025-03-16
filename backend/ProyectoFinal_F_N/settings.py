@@ -30,7 +30,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "proyecto-final-m1eb.onrender.com",
+<<<<<<< HEAD
     "5fe5-179-1-210-205.ngrok-free.app",
+=======
+    "ea91-179-1-210-204.ngrok-free.app",
+>>>>>>> 2bdac7eec4a785fd251043958ee39882d9e8f0ee
 ]
 
 
@@ -96,10 +100,29 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:3000",
+<<<<<<< HEAD
     "https://5fe5-179-1-210-205.ngrok-free.app",
+=======
+    "https://ea91-179-1-210-204.ngrok-free.app",
+    
+>>>>>>> 2bdac7eec4a785fd251043958ee39882d9e8f0ee
 ]
 
 
+CORS_ALLOW_CREDENTIALS = True
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # ✅ Permite el frontend local
+    "https://ea91-179-1-210-204.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "https://ea91-179-1-210-204.ngrok-free.app",
+]
+
+CORS_ALLOW_CREDENTIALS = True  # ✅ Permitir envío de cookies o credenciales
 
 REST_FRAMEWORK = {
     
@@ -116,6 +139,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),    # Duración del refresh token
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
 AUTH_USER_MODEL = 'registro.Usuario'

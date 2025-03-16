@@ -104,6 +104,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # ✅ Permite el frontend local
     "https://ea91-179-1-210-204.ngrok-free.app",  # ✅ Permite el frontend con Ngrok
+    "https://proyecto-final-m1eb.onrender.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [

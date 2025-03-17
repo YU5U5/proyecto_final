@@ -53,3 +53,40 @@ export const registerUser = async (userData) => {
     throw error;
   }
 };
+
+//................. recoverpassword...................................................................
+
+
+// 🔹 Solicitar código de recuperación
+export const solicitarRecuperacion = async (email) => {
+  const response = await fetch(`${API_URL}/recover_password/solicitar/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ correo_electronico: email }),
+  });
+
+  if (!response.ok) throw new Error("Error en la solicitud de recuperación.");
+  return await response.json();
+};
+
+export const confirmarToken = async (token) => {
+  const response = await fetch(`${API_URL}/recover_password/confirmar/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token }),
+  });
+
+  if (!response.ok) throw new Error("Código inválido.");
+  return await response.json();
+};
+
+export const restablecerContraseña = async (token, password, confirmPassword) => {
+  const response = await fetch(`${API_URL}/recover_password/restablecer/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token, nueva_contraseña: password, confirmar_contraseña: confirmPassword }),
+  });
+
+  if (!response.ok) throw new Error("Error al restablecer la contraseña.");
+  return await response.json();
+};

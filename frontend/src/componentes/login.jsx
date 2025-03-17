@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Container, Alert } from "react-bootstrap";
 import { loginUser } from "../services/authService";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -46,8 +47,9 @@ const Login = () => {
         </Form.Group>
         <Button variant="success" type="submit" className="mt-3">
           Iniciar sesión
-        </Button>
-      </Form>
+        </Button> 
+      </Form><Link to="/recover-password">¿Olvidaste tu contraseña?</Link>
+
     </Container>
   );
 };

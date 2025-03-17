@@ -1,3 +1,3 @@
-const API_URL = "https://f4e5-2800-484-a585-1a80-94ab-eb7e-ea0f-1c66.ngrok-free.app"; // 🔥 Asegúrate de actualizar esta URL cuando reinicies Ngrok
+const API_URL = "https://6fe7-179-1-210-205.ngrok-free.app"; // 🔥 Asegúrate de actualizar esta URL cuando reinicies Ngrok
 export default API_URL;
 
